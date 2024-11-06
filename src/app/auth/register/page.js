@@ -14,7 +14,6 @@ const RegisterPage = () => {
   const [error, setError] = useState(null);
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  console.log("avatar: ", avatar?.name);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -96,6 +95,7 @@ const RegisterPage = () => {
         <button
           className="bg-[var(--background-gamma)] w-full p-[10px] mt-2 font-bold text-sm"
           type="submit"
+          disabled={!username || !email || !password}
         >
           {"Register"}
         </button>

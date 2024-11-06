@@ -65,6 +65,7 @@ const LoginPage = () => {
         <button
           type="submit"
           className="bg-[var(--background-gamma)] w-full p-[10px] mt-2 font-bold text-sm"
+          disabled={!email || !password}
         >
           Login
         </button>
