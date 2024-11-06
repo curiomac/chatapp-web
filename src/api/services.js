@@ -161,7 +161,6 @@ const getChatList = async () => {
 const getChat = async (chat_room_id) => {
   try {
     const JWT_TOKEN = localStorage.getItem("jwt_token");
-    console.log("JWT_TOKEN retrieved: ", JWT_TOKEN);
 
     const res = await fetch(
       `http://localhost:1337/api/chat-rooms/${chat_room_id}`,

@@ -23,7 +23,6 @@ const ChatInputBox = ({ chatRoomId, userData, chatRoomData }) => {
       setMessageInput("");
     }
   };
-  console.log("hagah: ", chatRoomData, userData);
 
   return (
     <div className="bg-[var(--font-color-beta)] h-[70px]">

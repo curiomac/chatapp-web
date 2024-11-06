@@ -58,7 +58,6 @@ const InteractionsBar = ({ chatRoomId, chatRoomData, userData }) => {
         console.log("Error: ", err);
       });
   }, []);
-  console.log("userDatas: ", chatRoomData);
 
   return (
     <div className="bg-[var(--background-gamma)] h-[70px] flex items-center justify-between p-4">

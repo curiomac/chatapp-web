@@ -14,7 +14,6 @@ const Chats = ({ userData, handleChatRoomsUpdate, handleChatRoomData }) => {
   useEffect(() => {
     if (socket) {
       socket.on("newMessage", (res) => {
-        console.log("newMessage: ", res);
         setMessages(res?.populatedMessage?.messages);
         handleChatRoomsUpdate(res?.chatRoomsData);
         handleChatRoomData(res?.populatedMessage);
@@ -34,8 +33,6 @@ const Chats = ({ userData, handleChatRoomsUpdate, handleChatRoomData }) => {
       chatsRef.current.scrollTop = chatsRef.current.scrollHeight;
     }
   }, [messages]); // Trigger on messages change
-
-  console.log("chats: ", messages);
 
   return (
     <div

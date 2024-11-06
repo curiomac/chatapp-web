@@ -25,9 +25,7 @@ const ChatList = ({ getChatRoomId, chatRoomsUpdate, userData }) => {
   useEffect(() => {
     API.getChatList()
       .then(async (res) => {
-        console.log("room: ", res?.data?.results[0]?.id);
         if (res?.data?.results?.length > 0) {
-          console.log("rooasasm: ", res?.data?.results[0]?.id);
           const chatRoomsWithLastMessage = res?.data?.results?.map((room) => {
             const lastMessage = room.messages[room.messages.length - 1];
             return {
@@ -50,12 +48,9 @@ const ChatList = ({ getChatRoomId, chatRoomsUpdate, userData }) => {
       chatRoomsUpdate !== undefined &&
       Object.keys(chatRoomsUpdate).length > 0
     ) {
-      console.log("chatRoomsUpdate", chatRoomsUpdate);
       setChatRooms(chatRoomsUpdate);
     }
   }, [chatRoomsUpdate]);
-
-  console.log("chatRoomsUpdate", chatRooms);
   return (
     <div
       className="bg-[var(--background-gamma)]"

@@ -17,7 +17,6 @@ const ChatLobby = () => {
   const [userData, setUserData] = useState({});
   const [chatRoomsUpdate, setChatRoomsUpdate] = useState({});
   const getChatRoomId = (id) => {
-    console.log("asasasa: ", id);
     
     setChatRoomId(id);
   };
