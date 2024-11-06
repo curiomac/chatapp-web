@@ -64,12 +64,12 @@ const InteractionsBar = ({ chatRoomId, chatRoomData, userData }) => {
       <div>{chatRoomData?.name}</div>
       <div className="flex items-center gap-6 h-[70px] text-xl">
         <BsCameraVideoFill className="cursor-pointer" />
-        {userData?.role?.name === "Administrator" && (
-          <BsPersonFillAdd
-            className="cursor-pointer"
-            onClick={() => setAddUserModal(true)}
-          />
-        )}
+        {/* {userData?.role?.name === "Administrator" && ( */}
+        <BsPersonFillAdd
+          className="cursor-pointer"
+          onClick={() => setAddUserModal(true)}
+        />
+        {/* )} */}
         <BsThreeDots className="cursor-pointer" />
       </div>
       <Modal isOpen={addUserModal} onClose={() => setAddUserModal(false)}>
@@ -83,7 +83,11 @@ const InteractionsBar = ({ chatRoomId, chatRoomData, userData }) => {
               >
                 <div className="flex items-center gap-3">
                   <img
-                    src={`http://localhost:1337${data?.avatar?.url}`}
+                    src={
+                      data?.avatar?.url
+                        ? `http://localhost:1337${data?.avatar?.url}`
+                        : "https://curiomac-messenger.netlify.app/img/profile-blank.jpg"
+                    }
                     className="object-cover h-10 w-10 rounded-full"
                   />
                   <div>
