@@ -32,7 +32,7 @@ const Chats = ({ userData, handleChatRoomsUpdate, handleChatRoomData }) => {
     if (chatsRef.current) {
       chatsRef.current.scrollTop = chatsRef.current.scrollHeight;
     }
-  }, [messages]); // Trigger on messages change
+  }, [messages]);
 
   return (
     <div
